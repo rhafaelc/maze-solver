@@ -15,6 +15,7 @@ class Maze:
         cell_size_y: int,
         win: Window = None,
         seed: int = None,
+        sleep_interval: int = 0.05,
     ):
         self._x1 = x1
         self._y1 = y1
@@ -26,6 +27,7 @@ class Maze:
         self._cells = []
         if seed:
             random.seed(seed)
+        self._sleep = sleep_interval
 
         self._create_cells()
         self._break_entrance_and_exit()
@@ -59,7 +61,7 @@ class Maze:
             return
 
         self._win.redraw()
-        sleep(0.01)
+        sleep(self._sleep)
 
     def _break_entrance_and_exit(self):
         entrance_cell = self._cells[0][0]

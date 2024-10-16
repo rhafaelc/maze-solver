@@ -14,7 +14,7 @@ def main():
     win = Window(screen_x, screen_y)
 
     maze = Maze(
-        margin, margin, num_rows, num_cols, cell_size_x, cell_size_y, win, seed=2
+        margin, margin, num_rows, num_cols, cell_size_x, cell_size_y, win, seed=42
     )
     solved = maze.solve()
     if solved:
